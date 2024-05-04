@@ -1,128 +1,604 @@
-{% load static %}    
-<!doctype html>
-    <html lang="en">
-      <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'style.css' %}">
-
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-        <title>Syarif Rahman</title>
-      </head>
-      <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="{% url 'index' %}">Syarif Rahman</a>
-              
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+    <title>Syarif Rahman</title>
+    
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/css/fontawesome-all.css" rel="stylesheet">
+	<link href="../static/css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="../static/images/favicon.png">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
             
-              <div class=" collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto ">
-                  <li class="nav-item">
-                    <a class="nav-link mx-2" href="{% url 'projects' %}">Project</a>
-                  </li>
-                  {% comment %} <li class="nav-item">
-                    <a class="nav-link mx-2" href="{% url 'skills' %}">Skills</a>
-                  </li> {% endcomment %}
-                  <li class="nav-item">
-                    <a class="nav-link mx-2" href="{% url 'blog' %}">Blogs</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link mx-2" href="{% url 'contact' %}">Contact</a>
-                  </li>
-                  {% comment %} <li class="nav-item dropdown">
-                    <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Company
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Blog</a></li>
-                      <li><a class="dropdown-item" href="#">About Us</a></li>
-                      <li><a class="dropdown-item" href="#">Contact us</a></li>
-                    </ul>
-                  </li> {% endcomment %}
-                </ul>
-              </div>
-            </div>
-        </nav>
-    
-        <!-- Optional JavaScript; choose one of the two! -->
-        <!-- Header-->
-        <header class="py-5">
-            <div class="container px-5 pb-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-xxl-5">
-                        <!-- Header text content-->
-                        <div class="text-center text-xxl-start">
-                            <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Design &middot; Development &middot; Marketing</div></div>
-                            <div class="fs-3 fw-light text-muted">Hi, i’m Syarif Rahman</div>
-                            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">UI/UX Designer and IT Enthusiast.
-                            </span></h1>
-                            <p class="lead text-muted mb-5">I’m a UI/UX Designer Based Indonesia. I’m passionate about designing beautiful, functional, and engaging user experiences.</p>
-                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html">Resume</a>
-                                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="projects.html">Projects</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-7">
-                        <!-- Header profile picture-->
-                        <div class="d-flex justify-content-center mt-5 mt-xxl-0">
-                            <div class="profile bg-gradient-primary-to-secondary">
-                                <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
-                                <!-- Watch a tutorial on how to do this on YouTube (link)-->
-                                <img class="profile-img" src="{% static 'syarif.png' %}" alt="..." />
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>       
+            <!-- Image Logo -->
+            {% comment %} <a class="navbar-brand logo-image" href="index.html"><img src="../static/images/logo.svg" alt="Syarif Rahman"></a>   {% endcomment %}
 
-        <!-- About Section-->
-        <section class="bg-light py-5">
-            <div class="container px-5">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-xxl-8">
-                        <div class="text-center my-5">
-                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
-                            <p class="lead fw-light mb-4">My name is Syarif Rahman and I just Learning Django app</p>
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit dolorum itaque qui unde quisquam consequatur autem. Eveniet quasi nobis aliquid cumque officiis sed rem iure ipsa! Praesentium ratione atque dolorem?</p>
-                            <div class="d-flex justify-content-center fs-2 gap-4">
-                                <a class="text-gradient" href="#!"><i class="bi bi-twitter"></i></a>
-                                <a class="text-gradient" href="#!"><i class="bi bi-linkedin"></i></a>
-                                <a class="text-gradient" href="#!"><i class="bi bi-github"></i></a>
-                            </div>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <a class="navbar-brand logo-text page-scroll" href="index.html">Syarif Rahman</a>
+
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#header">Utama <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#about">Tentangku</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#contact">Kontak</a>
+                    </li>
+                    {% comment %} <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Drop</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item page-scroll" href="project.html">Project Details</a> {% endcomment %}
+                            {% comment %} <div class="dropdown-divider"></div>
+                            <a class="dropdown-item page-scroll" href="terms.html">Terms Conditions</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item page-scroll" href="privacy.html">Privacy Policy</a> {% endcomment %}
+                        </div>
+                    
+                    
+                </ul>
+                <span class="nav-item social-icons">
+                    <span class="fa-stack">
+                        <a href="facebook.com/syarifrahmann">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="instagram.com/syarifrahmann">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-twitter fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </span>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="text-container">
+                        <h1 class="h1-small text-white mb-3">I am a Product Designer who enjoys crafting experiences that empower users.</h1>
+                        <a class="btn-solid-lg page-scroll" href="#about">Tentang saya</a>
+                        <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-user"></i> Hubungi saya</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+    <!-- About-->
+    <div id="about" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="text-container first">
+                        <h2>Hi there I'm Syarif,</h2>
+                        <p>Saya seorang Product Designer Based Indonesia. Saya bersemangat merancang pengalaman pengguna yang indah, fungsional, dan menarik.. Saya senang menjalani seluruh proses bersama mulai dari konsep, hingga desain, lalu pengembangan dan peluncuran</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-container second">
+                        <div class="time">2023 - Sekanrang</div>
+                        <h6>FrontEnd Dev & Student COCONUT Computer Club</h6>
+                        <p>Advance Front End </p>
+                        <div class="time">Januari 2023
+                        </div>
+                        <h6>Lead Grapich Design | Actual Self Resources Indonesia</h6>
+                        <p>Figma, Corel, Filmora, Asset, Caraousel, Design System</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-container third">
+                        <div class="time">April 2022</div>
+                        <h6>Web Programmer | Spektrumedia Animation Studio</h6>
+                        <p>HTML/CSS, JavaScript, Animation, Php, Responsive Website, Mobile App Design.</p>
+                        <div class="time">Januari 2021</div>
+                        <h6>Content Creator Ensipedia.Id</h6>
+                        <p>Copywriting, Seo, Design, Content Management, Scraping</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of about -->
+
+
+    <!-- Services -->
+    {% comment %} <div id="services" class="basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Offered services</h2>
+                    <p class="p-heading">Web design and development have been my bread and butter for more than 5 years. During that time I've discovered that I can help startups and companies with the following services</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <i class="far fa-gem"></i>
+                        <h4>DESIGN</h4>
+                        <p>Successful online projects start with good design. It establishes a solid foundation for future development and allows for long term growth</p>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <i class="fas fa-code"></i>
+                        <h4>DEVELOPMENT</h4>
+                        <p>I can code my own designs or even use the customer's design as base. My focus is to generate clean code that's well structured for reliability</p>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <i class="fas fa-tv"></i>
+                        <h4>BASIC SEO</h4>
+                        <p>i can setup your project to use basic SEO principles which will push your project to the first page on search engines and save you ads money</p>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 --> {% endcomment %}
+    <!-- end of services -->
+
+
+    <!-- Details -->
+	<div class="split">
+		<div class="area-1">
+		</div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2 bg-gray">
+            <div class="container">    
+                <div class="row">
+                    <div class="col-lg-12">     
+                        
+                        <!-- Text Container -->
+                        <div class="text-container">
+                            <h2>Kenapa Bekerja denganku?</h2>
+                            <p>Saya  berkomunikasi dengan tim dan senang menginvestasikan waktu yang diperlukan untuk memahami masalah dengan sangat baik</p>
+                            <h5>DESIGN TOOLS</h5>
+                            <p>Alat desain favorit saya adalah Figma dan Corel tetapi saya biasa membuat desain di Figma, Sketch, dan Adobe XD</p>
+                            <h5>DEVELOPMENT SKILLS</h5>
+                            <p>Saya familiar dan bekerja menggunakan HTML, CSS, JavaScript, Bootstrap dan beberapa Frameworks lainnya</p>
+                            
+                            <div class="icons-container">
+                                <img src="../static/images/details-icon-photoshop.png" alt="alternative">
+                                <img src="../static/images/details-icon-illustrator.png" alt="alternative">
+                                <img src="../static/images/details-icon-html.png" alt="alternative">
+                                <img src="../static/images/details-icon-css.png" alt="alternative">
+                                <img src="../static/images/details-icon-bootstrap.png" alt="alternative">
+                                <img src="../static/images/details-icon-javascript.png" alt="alternative">
+                            </div> <!-- end of icons-container -->
+                        </div> <!-- end of text-container -->
+                        <!-- end of text container -->
+
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+		</div> <!-- end of area-2 -->
+    </div> <!-- end of split -->
+    <!-- end of details -->
+
+
+    <!-- Projects -->
+    <div id="projects" class="basic-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Projects Pilihan saya</h2>
+                    <p class="p-heading">Di bawah ini tercantum beberapa proyek paling representatif yang pernah saya kerjakan. Mulai dari desain web dasar untuk situs presentasi hingga pengembangan web tingkat lanjut.</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    {% comment %} <div class="text-container">
+                        <div class="image-container center">
+                            <a href="project.html">
+                                <img class="img-fluid" src="../static/images/work-1.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container --> {% endcomment %}
+                       
+                    </div> <!-- end of text-container -->
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="../static/images/work-3.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><strong>Project:</strong> Redesigning JDoodle's Website <a class="blue" href="work-2.png">details</a></p>
+                    </div> <!-- end of text-container -->
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="../static/images/work-4.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        < <p><strong>Project:</strong> Dashboard Design System <a class="blue" href="work-2.png">details</a></p>
+                    </div> <!-- end of text-container -->
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="../static/images/work-5.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><strong>Project:</strong> Login Page <a class="blue" href="work-2.png">details</a></p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-3 -->
+    <!-- end of projects -->
+
+
+    <!-- Works -->
+    <div class="basic-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="../static/images/work-2.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="../static/images/work-1.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="../static/images/work-3.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="../static/images/work-4.png" alt="alternative">
+                            </a> 
+                        </div> <!-- end of image-container -->
+                        
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="../static/images/work-5.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="../static/images/work-6.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-4 -->
+    <!-- end of works -->
+
+
+    <!-- Testimonials -->
+    <div class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Beberapa kata dari orang-orang yang bekerja dengan saya</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="testimonial-text">Syarif adalah pengembang terampil yang akan melakukan segala kemungkinan untuk menyelesaikan proyek tepat waktu dan saya sangat menghargainya”</p>
+                            <div class="details">
+                                <img src="../static/images/testimonial-1.jpg" alt="alternative">
+                                <div class="text">
+                                    <div class="testimonial-author">Samantha Bloom</div>
+                                    <div class="occupation">Team Leader - Syncnow</div>
+                                </div> <!-- end of text -->
+                            </div> <!-- end of testimonial-details -->
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- Footer-->
-    <footer class="bg-white py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto"><div class="small m-0">Copyright &copy; Syarif Rahman 2024</div></div>
-                <div class="col-auto">
-                    <a class="small" href="#!">Privacy</a>
-                    <span class="mx-1">&middot;</span>
-                    <a class="small" href="#!">Terms</a>
-                    <span class="mx-1">&middot;</span>
-                    <a class="small" href="#!">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-        <!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="testimonial-text">“Senang bekerja dengan Syarif, dia adalah pengembang yang luar biasa dengan perhatian besar terhadap detail. Dia juga memiliki minat yang besar terhadap desain”</p>
+                            <div class="details">
+                                <img src="../static/images/testimonial-2.jpg" alt="alternative">
+                                <div class="text">
+                                    <div class="testimonial-author">John Rowling</div>
+                                    <div class="occupation">Marketing Manager - Nexlite</div>
+                                </div> <!-- end of text -->
+                            </div> <!-- end of testimonial-details -->
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="testimonial-text">“Senang sekali kami mulai bekerja dengan Syarif. Kami telah berkali-kali menggunakan keahlian desain dan pengembangannya untuk proyek online internal kami”</p>
+                            <div class="details">
+                                <img src="../static/images/testimonial-3.jpg" alt="alternative">
+                                <div class="text">
+                                    <div class="testimonial-author">Lana Smith</div>
+                                    <div class="occupation">General Manager - Shifter</div>
+                                </div> <!-- end of text -->
+                            </div> <!-- end of testimonial-details -->
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-1 -->
+    <!-- end of testimonials -->
+
+
+    <!-- Section Divider -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <hr class="section-divider">
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+    <!-- end of section divider -->
+
+
+    {% comment %} <!-- Questions -->
+    <div class="accordion-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Frequent questions</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    How can I contact you and quickly get a quote for my online project?
+                                </button>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Do you create designs from the ground up or you are using themes?
+                                </button>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Will I receive any included maintenance or warranty after project delivery?
+                                </button>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    If something goes wrong with the project can I have my money back?
+                                </button>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFive">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    What's your preferred method of payment and do you need an advance?
+                                </button>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end of accordion -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of accordion-1 -->
+    <!-- end of questions --> {% endcomment %}
+
+
+    <!-- Contact -->
+    <div id="contact" class="form-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Kontak Detail</h2>
+                    <p class="p-heading">Untuk semua jenis proyek online jangan ragu untuk menghubungi saya. Cara tercepat adalah mengirimkan pesan Anda kepada saya menggunakan email berikut<a class="blue no-line" href="#your-link"> muhammadsyarif2312@gmail.com</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <!-- Contact Form -->
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="cname" required>
+                            <label class="label-control" for="cname">Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" id="cemail" required>
+                            <label class="label-control" for="cemail">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                            <label class="label-control" for="cmessage">Detail Project</label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">Kirim</button>
+                        </div>
+                    </form>
+                    <!-- end of contact form -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-1 -->  
+    <!-- end of contact -->
+
+
+    <!-- Footer -->
+    <div class="footer bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="social-container">
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-youtube fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div> <!-- end of social-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © <a class="no-line" href="#your-link">Syarif Rahman</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+
+        
+        
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
     
-        <!-- Option 2: Separate Popper and Bootstrap JS -->
-        <!--
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-        -->
-      </body>
-    </html>    
+    	
+    <!-- Scripts -->
+    <script src="../static/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="../static/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="../static/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="../static/js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>
